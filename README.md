@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # UNO-SURVIVAL-PRO
 
 A Complete, Production-Ready Multiplayer UNO Web Application.
@@ -29,3 +30,7 @@ Ensure your `.env` file in `/server` matches the defaults for localhost.
 ## How to invite friends
 In the Lobby screen, enter the password. The first user becomes the Host.
 The host dashboard allows generating ONE-TIME invite links to be sent to friends.
+=======
+# uno-survival-pro
+Uno Survival Game
+>>>>>>> e33302f4e88909c37e2b64011578d5c0ffb0cabb
