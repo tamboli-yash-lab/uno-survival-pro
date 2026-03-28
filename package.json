@@ -1,0 +1,26 @@
+{
+  "name": "uno-survival-pro",
+  "version": "1.0.0",
+  "description": "A COMPLETELY PRODUCTION-READY multiplayer UNO web application with 7 players, survival mode, twists, WebRTC voice chat and much more.",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "uno",
+    "multiplayer",
+    "survival",
+    "game",
+    "webrtc",
+    "socket.io",
+    "react"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

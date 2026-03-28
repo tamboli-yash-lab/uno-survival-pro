@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-uno-bg text-white font-sans antialiased overflow-hidden select-none;
+  }
+}
+
+.theme-classic {
+   --bg-gradient: linear-gradient(135deg, #cc0000 0%, #000099 100%);
+}
+
+.theme-dark {
+   --bg-gradient: linear-gradient(135deg, #111 0%, #222 100%);
+}
+
+.theme-neon {
+   --bg-gradient: linear-gradient(135deg, #110022 0%, #330066 100%);
+}
+
+body {
+   background: var(--bg-gradient, #1a1a1a);
+   background-size: 400% 400%;
+   transition: background 0.5s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.4);
+}
