@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { io } from 'socket.io-client';
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || (import.meta.env.PROD ? undefined : 'http://127.0.0.1:3001');
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'https://uno-survival-backend.onrender.com';
 export const socket = io(SERVER_URL, { 
     autoConnect: false,
     transports: ['websocket'],
