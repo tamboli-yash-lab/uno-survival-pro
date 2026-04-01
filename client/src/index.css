@@ -356,3 +356,85 @@ body {
   animation: botBarFill 2s linear forwards;
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
 }
+
+/* ─── Hand horizontal scroll ────────────────────────────── */
+.hand-scroll {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 20px 12px;
+  gap: 6px;
+  /* Fade edges for scroll hint */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+.hand-scroll::-webkit-scrollbar { display: none; }
+
+/* ─── Playable card highlight + dim ───────────────────── */
+.card-highlighted {
+  outline: 3px solid var(--accent-1) !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 18px var(--accent-glow), 0 8px 24px rgba(0,0,0,0.5) !important;
+  transform-origin: bottom center;
+}
+.card-dimmed {
+  opacity: 0.32 !important;
+  filter: grayscale(55%) !important;
+  pointer-events: none;
+}
+
+/* ─── Catch UNO badge ──────────────────────────────── */
+.catch-uno-btn {
+  animation: glowPulse 1s ease-in-out infinite;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+  font-weight: 900;
+  border-radius: 99px;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(239,68,68,0.6);
+}
+
+/* ─── Mobile overrides ──────────────────────────────── */
+@media (max-width: 640px) {
+  /* Compact opponent row */
+  .opponent-row {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .opponent-row::-webkit-scrollbar { display: none; }
+
+  /* Shrink center deck gap */
+  .center-gap { gap: 1.5rem !important; }
+
+  /* Timer fixed at top on mobile */
+  .timer-mobile {
+    position: fixed !important;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+  }
+
+  /* Tighten game log */
+  .game-log { width: 140px !important; font-size: 0.65rem !important; }
+}
+
